@@ -47,9 +47,28 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   arc(160, 113, 10, 10, 90, 170)  //mouth 
 
+
+
+  fill(255,72,165)   //reseting the fill
+
+  strokeWeight(.3)
+  stroke(255,72,165)
+
+  arc(157, 95, 10, 10, 35, 140)
+
+  triangle(155, 99.5, 157, 94.5, 159, 99.5)
+
+  fill(255)
+  strokeWeight(0)
+  arc(157, 93.9, 10, 10, 35, 140)
+
+  fill(255,72,165)   //reseting the fill
+
+  strokeWeight(.3)
+  stroke(255,72,165)
   
 
-
+  triangle(155, 99.5, 157, 94.5, 159, 99.5)
   
 
   
