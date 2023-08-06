@@ -1,13 +1,13 @@
 //your parameter variables go here!
 let evil = 1 //if you make the number 1 or larger it keeps the fish normal, anything less than 1 makes the fish evil
-let x = 100 //adjust the postion of the fish on the x - axis
-let y = 100 //adjust the postion of the fish on the y - axis
-let face_be_happy = 0 //if you make the number 1 or larger it makes the fish happy, anything less than 1 makes the fish sad
-
+let x = 10 //adjust the postion of the fish on the x - axis
+let y = 10 //adjust the postion of the fish on the y - axis
+let face_be_happy = 1 //if you make the number 1 or larger it makes the fish happy, anything less than 1 makes the fish sad, ONLY WORKS ON NORMAL FISH
+let fin = 1 //this turns the main body fin on or off, 1 or anything more than 1 is on, anything less is off
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
   //angleMode(DEGREES)
@@ -19,22 +19,23 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(240, 255, 240); //light honeydew green colour
+  background(226, 208, 239); 
 }
   
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  fish()
+  fish(1,10,10,1,1)
+  fish(0,100,100,1)
  
 }
 
 
 
-function fish(){
-  if( evil > 1){
-    evilfish()
+function fish(evil,x,y,face_be_happy,fin){ //if statment that decides on what fish to use
+  if( evil < 1){
+    evilfish(x,y,face_be_happy,fin)
   }
   else{
-    fishnotevil()
+    fishnotevil(x,y,face_be_happy,fin)
   }
 }
 
@@ -44,7 +45,7 @@ function fish(){
 
 
 
-function fishnotevil() {
+function fishnotevil(x,y,face_be_happy,fin) { //the not evil fish
   
 
 
@@ -81,10 +82,12 @@ function fishnotevil() {
 
  
 
-
+ if(fin >= 1){
   strokeWeight(1)
 
   triangle(x+50, y+10, x+48, y+15, x+30, y+18) //body fin
+ }
+  
 
 
 //everything below is the hat
@@ -98,7 +101,7 @@ function fishnotevil() {
 
   triangle(x+55, y-.5, x+57, y-8, x+59, y-.5) //tringle of the hat
 
-  fill(240, 255, 240) //background color 
+  fill(226, 208, 239) //background color 
   strokeWeight(0)
   arc(x+57, y-8.1, 15, 15, 35, 140) //arc to help shape the hat
 
@@ -116,7 +119,7 @@ function fishnotevil() {
 
 
 
-function evilfish() { //evil fish but with a sense of style so he keeps the pink hat
+function evilfish(x,y,fin) { //evil fish but with a sense of style so he keeps the pink hat
   strokeWeight(0)
 
   fill(0, 18, 41)
@@ -150,9 +153,12 @@ function evilfish() { //evil fish but with a sense of style so he keeps the pink
 
   fill(0, 18, 41)   //reseting the fill
 
-  strokeWeight(1)
-
-  triangle(x+50, y+10, x+48, y+15, x+30, y+18) //body fin
+  if(fin >= 1){
+    strokeWeight(1)
+  
+    triangle(x+50, y+10, x+48, y+15, x+30, y+18) //body fin
+   }
+    
 
   
 
@@ -169,7 +175,7 @@ arc(x+57, y-7, 15, 15, 35, 140) //brim of the hat
 
 triangle(x+55, y-.5, x+57, y-8, x+59, y-.5) //tringle of the hat
 
-fill(240, 255, 240) //background color 
+fill(226, 208, 239) //background color 
 strokeWeight(0)
 arc(x+57, y-8.1, 15, 15, 35, 140) //arc to help shape the hat
 
