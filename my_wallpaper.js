@@ -1,8 +1,8 @@
 //your parameter variables go here!
-let evil = 0
-let evil = 0 //if you make the number 1 or larger it makes the fish evil, anything less than 1 makes the fish normal
+let evil = 1 //if you make the number 1 or larger it keeps the fish normal, anything less than 1 makes the fish evil
 let x = 100 //adjust the postion of the fish on the x - axis
 let y = 100 //adjust the postion of the fish on the y - axis
+let face_be_happy = 0 //if you make the number 1 or larger it makes the fish happy, anything less than 1 makes the fish sad
 
 
 function setup_wallpaper(pWallpaper) {
@@ -30,13 +30,16 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
 
 function fish(){
-  if( evil >= 1){
+  if( evil > 1){
     evilfish()
   }
   else{
     fishnotevil()
   }
 }
+
+
+
 
 
 
@@ -69,7 +72,14 @@ function fishnotevil() {
 
   arc(x, y+13, 98, 10, 0, 180) //body line
 
-  arc(x+60, y+13, 10, 10, 100, 170)  //mouth 
+  if(face_be_happy >= 1){
+    arc(x+60, y+13, 10, 10, 100, 170)  //happy mouth
+  }
+  else{
+    arc(x+63, y+13, 10 ,5 , 180 ,350) //sad mouth
+  }
+
+ 
 
 
   strokeWeight(1)
