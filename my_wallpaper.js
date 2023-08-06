@@ -1,5 +1,8 @@
 //your parameter variables go here!
 let evil = 0
+let evil = 0 //if you make the number 1 or larger it makes the fish evil, anything less than 1 makes the fish normal
+let x = 100 //adjust the postion of the fish on the x - axis
+let y = 100 //adjust the postion of the fish on the y - axis
 
 
 function setup_wallpaper(pWallpaper) {
@@ -46,18 +49,17 @@ function fishnotevil() {
 
   fill(54, 79, 110)
 
-  triangle(30, 104, 10, 80, 13, 94) //top tail fin
+  triangle(x-70, y+4, x-90, y-20, x-87, y-6) //top tail fin
 
-  triangle(30, 103, 13, 93, 10, 108) //bottom tail fin
+  triangle(x-70, y+3, x-87, y-7, x-90, y+8) //bottom tail fin
 
-  arc(100, 100, 150, 60, 0, 180, CHORD) //body
+  arc( x, y, 150, 60, 0, 180, CHORD) //body
 
-  arc(100, 113, 98, 10, 0, 180) //body line
 
-  triangle(50, 100.5, 56, 94, 58, 100.5) //read top body fin
+  triangle(x-50, y+.5, x-44, y-6, x-42, y+.5) //read top body fin
 
   fill(0)
-  circle(160, 105, 5) //eye
+  circle(x+60, y+5, 5) //eye
 
   fill(54, 79, 110)   //reseting the fill
 
@@ -65,14 +67,14 @@ function fishnotevil() {
 
   strokeWeight(1.5)
 
-  arc(100, 113, 98, 10, 0, 180) //body line
+  arc(x, y+13, 98, 10, 0, 180) //body line
 
-  arc(160, 113, 10, 10, 100, 170)  //mouth 
+  arc(x+60, y+13, 10, 10, 100, 170)  //mouth 
 
 
   strokeWeight(1)
 
-  triangle(150, 110, 148, 115, 130, 118) //body fin
+  triangle(x+50, y+10, x+48, y+15, x+30, y+18) //body fin
 
 
 //everything below is the hat
@@ -82,20 +84,20 @@ function fishnotevil() {
   strokeWeight(.3)
   stroke(255,72,165) //pink color for the hat 
 
-  arc(157, 93, 15, 15, 35, 140) //brim of the hat
+  arc(x+57, y-7, 15, 15, 35, 140) //brim of the hat
 
-  triangle(155, 99.5, 157, 92, 159, 99.5) //tringle of the hat
+  triangle(x+55, y-.5, x+57, y-8, x+59, y-.5) //tringle of the hat
 
   fill(240, 255, 240) //background color 
   strokeWeight(0)
-  arc(157, 91.9, 15, 15, 35, 140) //arc to help shape the hat
+  arc(x+57, y-8.1, 15, 15, 35, 140) //arc to help shape the hat
 
   fill(255,72,165)  //pink color for the hat 
   strokeWeight(.3)
   stroke(255,72,165) //pink color for the hat 
   
 
-  triangle(155, 99.5, 157, 92, 159, 99.5) ////tringle of the hat
+  triangle(x+55, y-.5, x+57, y-8, x+59, y-.5) ////tringle of the hat
 
   
 }
@@ -109,21 +111,22 @@ function evilfish() { //evil fish but with a sense of style so he keeps the pink
 
   fill(0, 18, 41)
 
-  triangle(30, 104, 10, 80, 13, 94) //top tail fin
+  triangle(x-70, y+4, x-90, y-20, x-87, y-6) //top tail fin
 
-  triangle(30, 103, 13, 93, 10, 108) //bottom tail fin
+  triangle(x-70, y+3, x-87, y-7, x-90, y+8) //bottom tail fin
 
-  arc(100, 100, 150, 60, 0, 180, CHORD) //body
+  arc( x, y, 150, 60, 0, 180, CHORD) //body
 
-  arc(100, 113, 98, 10, 0, 180) //body line
 
-  triangle(50, 100.5, 56, 94, 58, 100.5) //read top body fin
+  triangle(x-50, y+.5, x-44, y-6, x-42, y+.5) //read top body fin
+
 
   fill(172, 11, 11)
-  circle(160, 105, 5) //eye
 
-  triangle(162, 111, 166, 113, 164.5, 120) //fang 1 
-  triangle(159, 111, 162, 112, 159, 120) //fang 2
+ circle(x+60, y+5, 5) //eye
+
+  triangle(x+62, y+11, x+66, y+13, x+64.5, y+20) //fang 1 
+  triangle(x+59, y+11, x+62, y+12, x+59, y+20) //fang 2
 
  noFill()
 
@@ -131,15 +134,15 @@ function evilfish() { //evil fish but with a sense of style so he keeps the pink
 
   strokeWeight(1.5)
 
-  arc(100, 113, 97, 10, 0, 180) //body line
+  arc(x, y+13, 98, 10, 0, 180) //body line
 
-  arc(158, 116, 17, 10, 260, 345)  //mouth 
+  arc(x+58, y+16, 17, 10, 260, 345)  //mouth 
 
   fill(0, 18, 41)   //reseting the fill
 
   strokeWeight(1)
 
-  triangle(150, 110, 148, 115, 130, 118) //body fin
+  triangle(x+50, y+10, x+48, y+15, x+30, y+18) //body fin
 
   
 
@@ -147,25 +150,23 @@ function evilfish() { //evil fish but with a sense of style so he keeps the pink
 
 //everything below is the hat
 
-  fill(255,72,165)   //pink color for the hat 
+fill(255,72,165)   //pink color for the hat 
 
-  strokeWeight(.3)
-  stroke(255,72,165) //pink color for the hat 
+strokeWeight(.3)
+stroke(255,72,165) //pink color for the hat 
 
-  arc(157, 93, 15, 15, 35, 140) //brim of the hat
+arc(x+57, y-7, 15, 15, 35, 140) //brim of the hat
 
-  triangle(155, 99.5, 157, 92, 159, 99.5) //tringle of the hat
+triangle(x+55, y-.5, x+57, y-8, x+59, y-.5) //tringle of the hat
 
-  fill(240, 255, 240) //background color 
-  strokeWeight(0)
-  arc(157, 91.9, 15, 15, 35, 140) //arc to help shape the hat
+fill(240, 255, 240) //background color 
+strokeWeight(0)
+arc(x+57, y-8.1, 15, 15, 35, 140) //arc to help shape the hat
 
-  fill(255,72,165)  //pink color for the hat 
-  strokeWeight(.3)
-  stroke(255,72,165) //pink color for the hat 
-  
+fill(255,72,165)  //pink color for the hat 
+strokeWeight(.3)
+stroke(255,72,165) //pink color for the hat 
 
-  triangle(155, 99.5, 157, 92, 159, 99.5) ////tringle of the hat
 
-  
+triangle(x+55, y-.5, x+57, y-8, x+59, y-.5) ////tringle of the hat
 }
